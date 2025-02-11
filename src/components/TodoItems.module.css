@@ -1,0 +1,22 @@
+.col-6, .col-4, .col-2 {
+    padding: 0 10px;
+    flex: 1;
+    min-width: 100px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }

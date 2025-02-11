@@ -1,18 +1,21 @@
+import styles from "./AddTodo.module.css";
 const AddTodo = () => {
   return (
-    <div className="row">
-      <div className="col-6">
+    <div className={styles.row}>
+      <div className={` ${styles["col-6"]}`}>
         <input
           type="text"
-          className="form-control"
+          className={` ${styles["form-control"]}`}
           placeholder="Enter Todo Here"
         />
       </div>
-      <div className="col-4">
-        <input type="date" className="form-control" />
+      <div className={` ${styles["col-4"]}`}>
+        <input type="date" className={` ${styles["form-control"]}`} />
       </div>
-      <div className="col-2">
-        <button className="btn btn-primary">Add</button>
+      <div className={` ${styles["col-2"]}`}>
+        <button className={`${styles.btn} ${styles["btn-primary"]}`}>
+          Add
+        </button>
       </div>
     </div>
   );

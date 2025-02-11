@@ -1,10 +1,13 @@
+import styles from "./TodoItems.module.css";
 const Todoitems = ({ todoItem }) => {
   return (
     <>
-      <div className="col-6">{todoItem.title}</div>
-      <div className="col-4">{todoItem.duedate}</div>
-      <div className="col-2">
-        <button className="btn btn-danger">Delete</button>
+      <div className={` ${styles["col-6"]}`}>{todoItem.title}</div>
+      <div className={` ${styles["col-4"]}`}>{todoItem.duedate}</div>
+      <div className={` ${styles["col-2"]}`}>
+        <button className={`${styles.btn} ${styles["btn-danger"]}`}>
+          Delete
+        </button>
       </div>
     </>
   );
