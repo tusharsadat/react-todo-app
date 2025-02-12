@@ -1,32 +1,35 @@
+import { useState } from "react";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
 
 function App() {
-  let todoItems = [
+  const [todoItems, setTodoItems] = useState([
     {
       id: 1,
       title: "Learn React",
       duedate: "13 / 12 / 2020",
     },
-    {
-      id: 2,
-      title: "Learn JSX",
-      duedate: "12 / 12 / 2020",
-    },
-    {
-      id: 3,
-      title: "Learn JavaScript",
-      duedate: "14 / 12 / 2020",
-    },
-  ];
+  ]);
+  const handleTodoAdd = (title, dueDate) => {
+    const newTodo = {
+      id: Date.now(),
+      title: title,
+      duedate: dueDate,
+    };
+    setTodoItems([...todoItems, newTodo]);
+  };
+  const handleDeleteItem = (id) => {
+    const newTodoItems = todoItems.filter((todoItem) => todoItem.id !== id);
+    setTodoItems(newTodoItems);
+  };
   return (
     <>
       <div className="container">
         <Header />
-        <AddTodo />
-        <TodoItem todoItems={todoItems} />
+        <AddTodo onTodoAdd={handleTodoAdd} />
+        <TodoItem todoItems={todoItems} onDeleteItem={handleDeleteItem} />
       </div>
     </>
   );
