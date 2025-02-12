@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MdOutlineAddCircle } from "react-icons/md";
 import styles from "./AddTodo.module.css";
 const AddTodo = ({ onTodoAdd }) => {
   const [title, setTitle] = useState("");
@@ -35,7 +36,7 @@ const AddTodo = ({ onTodoAdd }) => {
           className={`${styles.btn} ${styles["btn-primary"]}`}
           onClick={handleAddClick}
         >
-          Add
+          <MdOutlineAddCircle />
         </button>
       </div>
     </div>

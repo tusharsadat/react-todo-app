@@ -1,4 +1,5 @@
 import styles from "./TodoItems.module.css";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 const Todoitems = ({ todoItem, onDeleteItem }) => {
   return (
     <>
@@ -11,7 +12,7 @@ const Todoitems = ({ todoItem, onDeleteItem }) => {
             onDeleteItem(todoItem.id);
           }}
         >
-          Delete
+          <RiDeleteBin2Fill />
         </button>
       </div>
     </>
